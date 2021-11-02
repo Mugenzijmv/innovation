@@ -10,6 +10,6 @@ input[type=file] {
 .error-text {
     display: none;
 }
-.navbar {
-    width: 400px;
+.profile-image {
+    width: 40%;
 }

@@ -35,8 +35,11 @@
                               <label for="floatingSelectGrid">Password</label>
                             </div>
                           </div>
-                          <div class="d-grid gap-2 col-12 mx-auto button">
+                          <div class="d-grid gap-2 col-12 mx-auto button py-2">
                             <input type="submit" class="btn btn-primary" value="Login">
+                          </div>
+                          <div class="d-grid gap-2 col-12 mx-auto button py-3">
+                            <p>Dont't have an account? <a href="register">Register now</a></p>
                           </div>
                         </div>
                       </form>
