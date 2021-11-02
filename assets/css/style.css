@@ -1,0 +1,15 @@
+.card {
+    width: 500px;
+}
+footer {
+    font-size: 15px;
+}
+input[type=file] {
+    padding: 16px;
+}
+.error-text {
+    display: none;
+}
+.navbar {
+    width: 400px;
+}
