@@ -12,9 +12,6 @@
                           <a class="nav-link active" aria-current="page" href="requests"> <i class="fa fa-user-plus"></i> Requests</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="members"> <i class="fa fa-users"></i> Members</a>
-                        </li>
-                        <li class="nav-item">
                           <a class="nav-link active" aria-current="page" href="server/phpControllers/logout.php?logout_id=<?php echo $row['unique_id']; ?>"> <i class="fa fa-key"></i> Logout</a>
                         </li>
                       </ul>

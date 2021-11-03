@@ -1,10 +1,10 @@
 <?php
     include_once "config.php";
-    $deletekUser = mysqli_real_escape_string($conn, $_GET['deletekUser']);
+    $memberId = mysqli_real_escape_string($conn, $_GET['memberId']);
     echo $unblockUser;
     $pernmision = "Blocked";
-    $sql = mysqli_query($conn, "DELETE FROM users WHERE unique_id='{$deletekUser}'");
+    $sql = mysqli_query($conn, "DELETE FROM users WHERE unique_id='{$memberId}'");
     if($sql){
-        header("location: ../../requests.php");
+        header("location: ../../dashboard.php");
     }
 ?>

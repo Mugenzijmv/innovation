@@ -34,8 +34,9 @@
                     <td><?php echo $row['fname']; ?> <?php echo $row['lname']; ?></td>
                     <td><?php echo $row['email']; ?></td>
                     <td>
-                      <a href="editWorker.php?editWorker=<?php echo $row['unique_id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                      <a href="server/phpControllers/delete.php?deletekUser=<?php echo $row['unique_id']; ?>" class="btn btn-outline-danger btn-sm">Delete</a>
+                      <a href="editWorker.php?editWorker=<?php echo $row['unique_id']; ?>" class="btn btn-outline-warning btn-sm"><i class="fa fa-edit"></i></a>
+                      <a href="server/phpControllers/delete.php?deletekUser=<?php echo $row['unique_id']; ?>" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i></a>
+                      <a class="btn btn-outline-primary btn-sm rounde-circle" href="requests"> <i class="fa fa-chevron-right"></i></a>
                     </td>
                   </tr>
                   <?php
@@ -52,3 +53,7 @@
     <script src="server/jsControllers/login.js"></script>
 </body>
 </html>
+
+
+
+

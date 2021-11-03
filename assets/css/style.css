@@ -7,7 +7,7 @@ footer {
 input[type=file] {
     padding: 16px;
 }
-.error-text {
+.error-text, .alert-success {
     display: none;
 }
 .profile-image {

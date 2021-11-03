@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 if(!isset($_SESSION['unique_id'])){
     header('location: index.php');
@@ -7,6 +8,7 @@ if(!isset($_SESSION['unique_id'])){
     $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']} ");
     if(mysqli_num_rows($sql) > 0){
         $row = mysqli_fetch_assoc($sql);
+       // echo  $fname;
         $fname = $row['fname'];
         $lname = $row['lname'];
         $email = $row['email'];
