@@ -13,10 +13,9 @@
     <div class="container pb-5">
         <?php include_once('inc/header.php'); ?>
         <div class="row">
-          
-          
           <?php
-          $sqlUsers = mysqli_query($conn, "SELECT * FROM users WHERE unique_id != {$_SESSION['unique_id']} ");
+          $permission = "Confirmed";
+          $sqlUsers = mysqli_query($conn, "SELECT * FROM users WHERE unique_id != {$_SESSION['unique_id']} AND permission = '{$permission}' ");
           if(mysqli_num_rows($sqlUsers) > 0){
               while ($rowUsers = mysqli_fetch_assoc($sqlUsers)) { ?>
           <div class="col-md-3 my-1">
@@ -42,6 +41,6 @@
         </div>
         <?php include_once('inc/footer.php'); ?>
     </div>
-    <script src="server/jsControllers/login.js"></script>
+    <!-- <script src="server/jsControllers/login.js"></script> -->
 </body>
 </html>

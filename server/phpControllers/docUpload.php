@@ -8,10 +8,10 @@ if(isset($_FILES['image'])){
     $tmp_name = $_FILES['image']['tmp_name'];
     $img_explode = explode('.', $img_name);
     $img_ext = end($img_explode);
-    $extensions = ["jpeg", "png", "jpg"];
+    $extensions = ['zip', 'pdf', 'docx'];
     if(in_array($img_ext, $extensions) === true){
-        $types = ["image/jpeg", "image/jpg", "image/png"];
-        if(in_array($img_type, $types) === true){
+        // $types = ["image/zip", "image/pdf", "image/docx"];
+        // if(in_array($img_type, $types) === true){
             $time = time(); 
             $new_img_name = $time.$img_name;
             if(move_uploaded_file($tmp_name,"../../assets/images/".$new_img_name)){ 
@@ -25,9 +25,9 @@ if(isset($_FILES['image'])){
             }else {
                 echo "Uploading image in directory error!";
             }
-        }else{
-            echo "Please select an image file - jpeg, jpg, png!";
-        }
+       /*  }else{
+            echo "Please select an image file - jpeg, jpg, pdf!";
+        } */
     }else{
         echo "Please select an image file";
     }

@@ -14,8 +14,13 @@ continueBtn.onclick = () => {
                 if (data === "success") {
                     location.href = "dashboard.php";
                 } else {
-                    errorText.innerHTML = data;
-                    errorText.style.display = "block";
+                    if (data === "success2") {
+                        location.href = "member.php";
+                    } else {
+                        errorText.innerHTML = data;
+                        errorText.style.display = "block";
+                    }
+                    
                 }
                 //console.log(data);
             }

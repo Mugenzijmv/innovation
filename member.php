@@ -4,8 +4,10 @@
         <div class="row d-flex justify-content-center">
           <div class="card pt-3 " style="width: 30rem;">
             <div class="row">
+
                 <div class="col-md-12 d-flex justify-content-center mb-4">
                   <img  class="profile-image rounded-circle" src="assets/images/<?php echo $row['img']; ?>" class="card-img-top" alt="...">
+
                 </div>
                 <div class="col-md-12 d-flex justify-content-center">
                   <h5 class="card-title"><?php echo $row['fname']; ?> <?php echo $row['lname']; ?> (<?php echo $row['email']; ?>)</h5><br>
@@ -36,7 +38,7 @@
                     </div>
                 </div>
                 <div class="card-body  p-3 docUpload">
-                    <form>
+                    <form method="post" enctype="multipart/form-data">
                         <div class="error-text alert alert-danger  align-items-center " role="alert">
                           <div class="">Error!</div>
                         </div>

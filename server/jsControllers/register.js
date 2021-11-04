@@ -12,7 +12,7 @@ continueBtn.onclick = () => {
             if (xhr.status === 200) {
                 let data = xhr.response;
                 if (data === "success") {
-                    location.href = "dashboard.php";
+                    location.href = "member.php";
                 } else {
                     errorText.innerHTML = data;
                     errorText.style.display = "block";

@@ -26,17 +26,18 @@
                 <tbody>
                 <?php
                 $i = 1;
-                $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id != {$_SESSION['unique_id']} ");
-                if(mysqli_num_rows($sql) > 0){
-                    while ($row = mysqli_fetch_assoc($sql)) { ?>
+                $permission = "Confirmed";
+                $sqlMember = mysqli_query($conn, "SELECT * FROM users WHERE unique_id != {$_SESSION['unique_id']} AND permission != '{$permission}' ");
+                if(mysqli_num_rows($sqlMember) > 0){
+                    while ($rowMember = mysqli_fetch_assoc($sqlMember)) { ?>
                   <tr>
                     <th scope="row"><?php echo $i++ ?></th>
-                    <td><?php echo $row['fname']; ?> <?php echo $row['lname']; ?></td>
-                    <td><?php echo $row['email']; ?></td>
+                    <td><?php echo $rowMember['fname']; ?> <?php echo $rowMember['lname']; ?></td>
+                    <td><?php echo $rowMember['email']; ?></td>
                     <td>
-                      <a href="editWorker.php?editWorker=<?php echo $row['unique_id']; ?>" class="btn btn-outline-warning btn-sm"><i class="fa fa-edit"></i></a>
-                      <a href="server/phpControllers/delete.php?deletekUser=<?php echo $row['unique_id']; ?>" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i></a>
-                      <a class="btn btn-outline-primary btn-sm rounde-circle" href="requests"> <i class="fa fa-chevron-right"></i></a>
+                      <a href="server/phpControllers/confirmMember.php?unique_id=<?php echo $rowMember['unique_id']; ?>" class="btn btn-outline-warning btn-sm"><i class="fa fa-check"></i></a>
+                      <a href="server/phpControllers/denyMember.php?deletekUser=<?php echo $rowMember['unique_id']; ?>" class="btn btn-outline-danger btn-sm"><i class="fa fa-times"></i></a>
+                      <!-- <a class="btn btn-outline-primary btn-sm rounde-circle" href="requests"> <i class="fa fa-chevron-right"></i></a> -->
                     </td>
                   </tr>
                   <?php
@@ -50,7 +51,7 @@
         </div>
         <?php include_once('inc/footer.php'); ?>
     </div>
-    <script src="server/jsControllers/login.js"></script>
+    <!-- <script src="server/jsControllers/login.js"></script> -->
 </body>
 </html>
 

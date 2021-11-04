@@ -26,10 +26,11 @@ if(!empty($fname) && !empty($lname) && !empty($email) && !empty($password)){
                         $new_img_name = $time.$img_name;
                         if(move_uploaded_file($tmp_name,"../../assets/images/".$new_img_name)){ 
                             $status = "Active now";
+                            $role = "Admin";
                             $random_id = rand(time(), 100000000);
                             $encrypt_pass = md5($password);
-                            $sql2 = mysqli_query($conn, "INSERT INTO users(unique_id, fname, lname, email, password, img, status)
-                                                VALUES ({$random_id}, '{$fname}', '{$lname}', '{$email}', '{$encrypt_pass}', '{$new_img_name}', '{$status}' ) ");
+                            $sql2 = mysqli_query($conn, "INSERT INTO users(unique_id, fname, lname, email, password, img, role, status)
+                                                VALUES ({$random_id}, '{$fname}', '{$lname}', '{$email}', '{$encrypt_pass}', '{$new_img_name}', '{$role}', '{$status}' ) ");
                             if($sql2){
                                 $sql3 = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}' ");
                                 if(mysqli_num_rows($sql3) > 0){
