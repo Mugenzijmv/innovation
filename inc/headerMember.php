@@ -31,13 +31,13 @@
                             $rowPermit = mysqli_fetch_assoc($sqlPermit); 
                             $permission = $rowPermit['permission'];
                             $permissionWait = "Waiting";
-                            $permission = "Aproved";
-                            if ($permission == $permissionWait) { ?>
+                            $permissionOk = "Confirmed";
+                            if ($permission == "") { ?>
                                 <li class="nav-item">
-                                  <a class="nav-link active  aria-current="page" href="#"> <i class="fa fa-exclamation"></i> Waiting...</a>
+                                  <a class="nav-link text-blue"  aria-current="page" href="#"> <i class="fa fa-exclamation"></i> Waiting confirmation...</a>
                                 </li>
                             <?php
-                            } elseif ($permission == $permission) { ?>
+                            } elseif ($permission == $permissionOk) { ?>
                                 <li class="nav-item">
                                     <a class="nav-link text-success" aria-current="page" href="#"> <i class="fa fa-check"></i></a>
                                 </li>
@@ -45,7 +45,7 @@
                             }
                              else { ?>
                                 <li class="nav-item">
-                                    <a class="nav-link active text-danger" aria-current="page" href="#"> <i class="fa fa-close"></i></a>
+                                    <a class="nav-link text-danger" aria-current="page" href="#"> <i class="fa fa-close"></i></a>
                                 </li>
                             <?php
                             }

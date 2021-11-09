@@ -51,7 +51,10 @@
                             <input type="file" name="image" class="form-control" id="floatingInputGrid" placeholder="name@example.com"> 
                           </div>
                           <div class="d-grid gap-2 col-12 mx-auto button">
-                            <input type="submit" class="btn btn-primary" value="Login">
+                            <input type="submit" class="btn btn-primary" value="Register">
+                          </div>
+                          <div class="d-grid gap-2 col-12 mx-auto button py-3">
+                            <p>Have an account? <a href="index">Login here</a></p>
                           </div>
                         </div>
                       </form>

@@ -13,3 +13,9 @@ input[type=file] {
 .profile-image {
     width: 40%;
 }
+.myBoutton {
+    background-color: blueviolet;
+}
+.container {
+    height: 900px;
+}

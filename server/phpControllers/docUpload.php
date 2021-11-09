@@ -15,8 +15,9 @@ if(isset($_FILES['image'])){
             $time = time(); 
             $new_img_name = $time.$img_name;
             if(move_uploaded_file($tmp_name,"../../assets/images/".$new_img_name)){ 
-                $permission = "Waiting";
-                $sql2 = mysqli_query($conn, "UPDATE users SET doc = '{$new_img_name}', permission = '{$permission}' WHERE unique_id = '{$unique_id}' ");
+                // $permission = "Waiting";
+                // $sql2 = mysqli_query($conn, "UPDATE users SET doc = '{$new_img_name}', permission = '{$permission}' WHERE unique_id = '{$unique_id}' ");
+                $sql2 = mysqli_query($conn, "UPDATE users SET doc = '{$new_img_name}' WHERE unique_id = '{$unique_id}' ");
                 if($sql2){
                     echo "success";
                 }else{

@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body> 
-    <div class="container pb-5">
+    <div class="container pb-5 bg-light px-5">
         <?php include_once('inc/header.php'); ?>
         <div class="row">
           <?php
@@ -30,12 +30,41 @@
                 <div class="col-md-12 d-flex justify-content-center mb-5">
                   <a href="editMember.php?memberId=<?php echo $rowUsers['unique_id']; ?>" class="btn btn-outline-warning btn-sm mx-1"><i class="fa fa-edit"></i></a>
                   <a href="server/phpControllers/delete.php?memberId=<?php echo $rowUsers['unique_id']; ?>" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i></a>
+                  <?php
+                  $docUnavailable = $rowUsers['doc'];
+
+                  if ($docUnavailable == "") {
+                    ?>
+                      <a class="btn btn-outline-info btn-sm mx-1" target="_blank"><i class="fa fa-exclamation"></i> Not uploaded</a>
+                    <?php
+                  } else {
+                    ?>
+                      <a href="server/phpControllers/viewDcoc.php?unique_id=<?php echo $rowUsers['unique_id']; ?>" class="btn btn-outline-primary btn-sm mx-1" target="_blank"><i class="fa fa-file-pdf"></i></a>
+                    <?php
+                  }
+                  
+
+                  ?>
                 </div>
               </div>
             </div>
           </div>
           <?php
               }
+            }else { ?>
+              <div class="col-md-12 my-1">
+                <div class="pt-3">
+                  <div class="row text-center d-flex justify-content-center">
+                    <h1 class="">No one here!</h1>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            <?php
+              # code...
             }
           ?>
         </div>

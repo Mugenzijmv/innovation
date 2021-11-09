@@ -56,7 +56,7 @@
                             <input type="file" name="image" class="form-control"> 
                           </div>
                           <div class="d-grid gap-2 col-12 mx-auto button">
-                            <input type="submit" class="btn btn-primary" value="Login">
+                            <input type="submit" class="btn btn-primary" value="Upload">
                           </div>
                         </div>
                     </form>

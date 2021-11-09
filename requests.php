@@ -10,10 +10,10 @@
     <title>Document</title>
 </head>
 <body> 
-    <div class="container pb-5">
+    <div class="container pb-5 bg-light">
         <?php include_once('inc/header.php'); ?>
         <div class="row d-flex justify-content-center">
-            <div class="col-9 d-flex">
+            <div class="col-9">
               <table class="table">
                 <thead>
                   <tr>
@@ -42,6 +42,13 @@
                   </tr>
                   <?php
                     }
+                } else { ?>
+                <tr>
+                    <th colspan="4" scope="row"><h1>No one here!</h1></th>
+                </tr>
+
+
+                <?php
                 }
                 ?>
                 </tbody>

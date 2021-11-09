@@ -26,7 +26,7 @@ if(!empty($fname) && !empty($lname) && !empty($email) && !empty($password)){
                         $new_img_name = $time.$img_name;
                         if(move_uploaded_file($tmp_name,"../../assets/images/".$new_img_name)){ 
                             $status = "Active now";
-                            $role = "Admin";
+                            $role = "User";
                             $random_id = rand(time(), 100000000);
                             $encrypt_pass = md5($password);
                             $sql2 = mysqli_query($conn, "INSERT INTO users(unique_id, fname, lname, email, password, img, role, status)
